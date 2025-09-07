@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Settings - MedCheck Admin</title>
+  <link rel="stylesheet" href="./page.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=SF+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Profile Settings Page -->
+  <div class="profile-settings-page">
+    
+    <!-- Hidden checkbox inputs for CSS-only interactions -->
+    <input type="checkbox" id="mobile-menu-toggle" class="popup-toggle" aria-hidden="true">
+    <input type="checkbox" id="notifications-toggle" class="popup-toggle" aria-hidden="true">
+    <input type="checkbox" id="success-popup-toggle" class="popup-toggle" aria-hidden="true">
+    
+    <!-- Mobile Status Bar (mobile only) -->
+    <div class="mobile-status-bar mobile-only" aria-hidden="true">
+      <div class="status-content">
+        <div class="time">
+          <span class="time-text">9:41</span>
+        </div>
+        <div class="dynamic-island-spacer"></div>
+        <div class="status-icons">
+          <img src="Cellular Connection.svg" alt="" class="cellular-icon" loading="lazy">
+          <img src="Wifi.svg" alt="" class="wifi-icon" loading="lazy">
+          <div class="battery">
+            <div class="battery-border"></div>
+            <img src="Cap.svg" alt="" class="battery-cap" loading="lazy">
+            <div class="battery-level"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="header" role="banner">
+      <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <!-- Logo -->
+        <a href="#" class="logo-link" aria-label="MedCheck Home">
+          <img src="logo.svg" alt="MedCheck Logo" class="logo-icon" loading="lazy">
+          <span class="brand-name">Medcheck</span>
+        </a>
+
+        <!-- Desktop Navigation (hidden on mobile) -->
+        <div class="desktop-nav desktop-only">
+          <a href="#" class="nav-item" aria-label="Dashboard">
+            <img src="home-4-line.svg" alt="" class="nav-icon" loading="lazy">
+            <span>Dashboard</span>
+          </a>
+          <div class="nav-item nav-dropdown">
+            <img src="box-3-line.svg" alt="" class="nav-icon" loading="lazy">
+            <span>Products</span>
+            <img src="arrow-drop-down-line.svg" alt="" class="dropdown-arrow" loading="lazy">
+          </div>
+          <a href="#" class="nav-item" aria-label="Awareness">
+            <img src="news-line.svg" alt="" class="nav-icon" loading="lazy">
+            <span>Awareness</span>
+          </a>
+          <a href="#" class="nav-item" aria-label="Users">
+            <img src="vuesax/linear/profile-circle.svg" alt="" class="nav-icon" loading="lazy">
+            <span>Users</span>
+          </a>
+          <a href="#" class="nav-item" aria-label="Analytics">
+            <img src="bar-chart-2-line.svg" alt="" class="nav-icon" loading="lazy">
+            <span>Analytics</span>
+          </a>
+          <a href="#" class="nav-item nav-item--active" aria-label="Settings" aria-current="page">
+            <img src="settings-3-line.svg" alt="" class="nav-icon" loading="lazy">
+            <span>Settings</span>
+          </a>
+        </div>
+
+        <!-- Header Actions -->
+        <div class="header-actions">
+          <!-- Profile Menu (desktop only) -->
+          <div class="profile-menu desktop-only">
+            <img src="Group 23.png" alt="User profile" class="profile-pic" loading="lazy">
+          </div>
+
+          <!-- Logout Button (desktop only) -->
+          <button class="logout-btn desktop-only" aria-label="Logout">
+            <img src="Frame 162.svg" alt="" loading="lazy">
+          </button>
+
+          <!-- Notifications -->
+          <div class="notification-container">
+            <label for="notifications-toggle" class="notification-trigger" aria-label="View notifications">
+              <img src="Frame 161.svg" alt="" class="notification-icon" loading="lazy">
+            </label>
+            <div class="notification-popup">
+              <div class="notification-list">
+                <div class="notification-item">
+                  <img src="Ellipse 9.png" alt="Miss Jennifer" class="notification-avatar" loading="lazy">
+                  <div class="notification-content">
+                    <div class="notification-title">
+                      <strong>Miss Jennifer</strong>
+                      <button class="notification-action">View</button>
+                    </div>
+                    <p class="notification-message">Fake product everywhere</p>
+                    <span class="notification-time">20m ago</span>
+                  </div>
+                </div>
+                <div class="notification-item">
+                  <img src="Ellipse 9.png" alt="Miss Jennifer" class="notification-avatar" loading="lazy">
+                  <div class="notification-content">
+                    <div class="notification-title">
+                      <strong>Miss Jennifer</strong>
+                      <button class="notification-action">View</button>
+                    </div>
+                    <p class="notification-message">Fake product everywhere</p>
+                    <span class="notification-time">20m ago</span>
+                  </div>
+                </div>
+                <div class="notification-item">
+                  <img src="Ellipse 9.png" alt="Miss Jennifer" class="notification-avatar" loading="lazy">
+                  <div class="notification-content">
+                    <div class="notification-title">
+                      <strong>Miss Jennifer</strong>
+                      <button class="notification-action">View</button>
+                    </div>
+                    <p class="notification-message">Fake product everywhere</p>
+                    <span class="notification-time">20m ago</span>
+                  </div>
+                </div>
+                <div class="notification-item">
+                  <img src="Ellipse 9.png" alt="Miss Jennifer" class="notification-avatar" loading="lazy">
+                  <div class="notification-content">
+                    <div class="notification-title">
+                      <strong>Miss Jennifer</strong>
+                      <button class="notification-action">View</button>
+                    </div>
+                    <p class="notification-message">Fake product everywhere</p>
+                    <span class="notification-time">20m ago</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="mobile-menu-container mobile-only">
+            <label for="mobile-menu-toggle" class="mobile-menu-trigger" aria-label="Open menu">
+              <img src="menu-line.svg" alt="" class="menu-icon" loading="lazy">
+            </label>
+            <div class="mobile-menu-popup">
+              <nav class="mobile-menu" role="navigation" aria-label="Mobile navigation">
+                <a href="#" class="mobile-nav-item">Dashboard</a>
+                <a href="#" class="mobile-nav-item">Verification</a>
+                <a href="#" class="mobile-nav-item">Reports</a>
+                <a href="#" class="mobile-nav-item">Awareness</a>
+                <a href="#" class="mobile-nav-item">User</a>
+                <a href="#" class="mobile-nav-item">Analytics</a>
+                <a href="#" class="mobile-nav-item mobile-nav-item--active" aria-current="page">Settings</a>
+                <a href="#" class="mobile-nav-item mobile-nav-item--logout">Logout</a>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content" role="main">
+      <!-- Page Title -->
+      <div class="page-header">
+        <h1 class="page-title">Profile Settings</h1>
+        <p class="page-subtitle">Manage your account details and preferences</p>
+      </div>
+
+      <!-- Profile Settings Form -->
+      <section class="profile-section" aria-labelledby="profile-settings-title">
+        <h2 id="profile-settings-title" class="sr-only">Profile Settings Form</h2>
+        
+        <!-- Avatar -->
+        <div class="avatar-container">
+          <img src="Avarta.png" alt="Current profile picture" class="avatar-image" loading="lazy">
+        </div>
+
+        <!-- Profile Form -->
+        <form class="profile-form" novalidate>
+          <!-- Full Name Input -->
+          <div class="input-group">
+            <img src="vuesax/linear/user.svg" alt="" class="input-icon" loading="lazy">
+            <div class="input-wrapper">
+              <input type="text" id="fullName" name="fullName" value="Miss Jennifer" class="form-input" aria-label="Full name">
+            </div>
+          </div>
+
+          <!-- Email Input -->
+          <div class="input-group">
+            <img src="mail-line.svg" alt="" class="input-icon" loading="lazy">
+            <div class="input-wrapper">
+              <input type="email" id="email" name="email" placeholder="Email" class="form-input" aria-label="Email address">
+            </div>
+          </div>
+
+          <!-- Phone Number Input -->
+          <div class="input-group">
+            <img src="ng logo.svg" alt="" class="input-icon" loading="lazy">
+            <div class="input-wrapper">
+              <input type="tel" id="phone" name="phone" placeholder="Phone Number" class="form-input" aria-label="Phone number">
+            </div>
+          </div>
+
+          <!-- Location Input -->
+          <div class="input-group">
+            <img src="vuesax/linear/location-tick.svg" alt="" class="input-icon" loading="lazy">
+            <div class="input-wrapper">
+              <input type="text" id="location" name="location" placeholder="Location" class="form-input" aria-label="Location">
+            </div>
+          </div>
+
+          <!-- Password Input -->
+          <div class="input-group password-input">
+            <img src="vuesax/linear/lock.svg" alt="" class="input-icon" loading="lazy">
+            <div class="input-wrapper">
+              <input type="password" id="password" name="password" placeholder="Change Password" class="form-input" aria-label="Change password">
+            </div>
+            <img src="vuesax/linear/eye.svg" alt="" class="password-toggle" loading="lazy" aria-hidden="true">
+          </div>
+
+          <!-- Submit Button -->
+          <label for="success-popup-toggle" class="save-button" role="button" tabindex="0" aria-label="Save changes">
+            <span>Save Change</span>
+          </label>
+        </form>
+      </section>
+
+      <!-- Success Popup Modal -->
+      <div class="popup-overlay success-popup">
+        <div class="popup-content">
+          <img src="vuesax/linear/verify.svg" alt="" class="success-icon" loading="lazy">
+          <h2 class="success-title">🎉 Successful</h2>
+          <div class="success-message">
+            <p><strong>Thanks !!!</strong></p>
+            <p>Your account has been updated successfully.</p>
+            <p>Let's get started!</p>
+          </div>
+          <label for="success-popup-toggle" class="done-button" role="button" tabindex="0" aria-label="Close success message">
+            <span>Done</span>
+          </label>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+      <div class="footer-content">
+        <!-- Footer Brand -->
+        <div class="footer-brand">
+          <a href="#" class="footer-logo" aria-label="MedCheck Home">
+            <img src="logo.svg" alt="MedCheck Logo" loading="lazy">
+            <span>Medcheck</span>
+          </a>
+        </div>
+
+        <!-- Footer Sections -->
+        <div class="footer-sections">
+          <!-- Quick Links -->
+          <div class="footer-section">
+            <h3>Quick</h3>
+            <nav role="navigation" aria-label="Footer navigation">
+              <a href="#">Verification</a>
+              <a href="#">Reports</a>
+              <a href="#">Awareness</a>
+              <a href="#">Users</a>
+              <a href="#">Analytics</a>
+            </nav>
+          </div>
+
+          <!-- Legal Links (mobile shows second) -->
+          <div class="footer-section footer-legal-section">
+            <h3 class="sr-only">Legal</h3>
+            <nav role="navigation" aria-label="Legal links">
+              <a href="#">Terms & Conditions</a>
+              <a href="#">Privacy Policy</a>
+            </nav>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="footer-section newsletter-section">
+            <h3>Subscribe to our newsletter</h3>
+            <form class="newsletter-form" role="form" aria-label="Newsletter signup">
+              <div class="newsletter-input">
+                <input type="email" placeholder="Enter your email" aria-label="Enter your email for newsletter">
+                <button type="submit" aria-label="Subscribe to newsletter">
+                  <img src="submit-icon.svg" alt="" loading="lazy">
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <div class="footer-legal desktop-only">
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Privacy Policy</a>
+          </div>
+          <div class="social-media">
+            <a href="#" aria-label="Facebook">
+              <img src="facebook-icon.svg" alt="" loading="lazy">
+            </a>
+            <a href="#" aria-label="Twitter">
+              <img src="twitter-icon.svg" alt="" loading="lazy">
+            </a>
+            <a href="#" aria-label="Instagram">
+              <img src="instagram-icon.svg" alt="" loading="lazy">
+            </a>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-copyright">
+          <p>© 2025 MedCheck. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Mobile Home Indicator (mobile only) -->
+    <div class="mobile-home-indicator mobile-only" aria-hidden="true">
+      <div class="home-indicator-bar"></div>
+    </div>
+  </div>
+
+  <!-- Screen reader only content for accessibility -->
+  <div class="sr-only">
+    <p>Profile settings page for MedCheck admin dashboard. Use Tab key to navigate through form fields and buttons.</p>
+  </div>
+</body>
+</html>

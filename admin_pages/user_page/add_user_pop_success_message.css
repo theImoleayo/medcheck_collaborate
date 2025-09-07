@@ -1,0 +1,63 @@
+.dashboard-add-user-successful {
+  	width: 100%;
+  	position: relative;
+  	box-shadow: 0px 4px 15.6px #b3b3b3;
+  	border-radius: 25px;
+  	background-color: #fafafa;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	justify-content: center;
+  	padding: 30px 15px;
+  	box-sizing: border-box;
+  	gap: 25px;
+  	text-align: center;
+  	font-size: 16px;
+  	color: #000;
+  	font-family: 'DM Sans';
+}
+.vuesaxlinearverify-icon {
+  	width: 69px;
+  	position: relative;
+  	max-height: 100%;
+}
+.successful {
+  	position: relative;
+  	font-size: 20px;
+  	letter-spacing: -0.03em;
+  	line-height: 28px;
+  	font-weight: 500;
+  	white-space: pre-wrap;
+}
+.new-users-container {
+  	position: relative;
+  	letter-spacing: -0.03em;
+  	line-height: 24px;
+}
+.new-users {
+  	margin: 0;
+  	font-weight: 500;
+}
+.your-user-as {
+  	margin: 0;
+}
+.component-28 {
+  	width: 260px;
+  	border-radius: 10px;
+  	background-color: #009200;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: center;
+  	padding: 20px;
+  	box-sizing: border-box;
+  	text-align: left;
+  	color: #fff;
+}
+.verify {
+  	position: relative;
+  	letter-spacing: -0.03em;
+  	line-height: 24px;
+  	font-weight: 500;
+}
+

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedCheck Admin Sign In</title>
+    <meta name="description" content="MedCheck Admin Portal - Secure login for administrators">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./admin_signin.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Main admin sign-in container -->
+    <main class="admin-signin-container">
+        
+        <!-- Header with MedCheck branding -->
+        <header class="brand-header">
+            <img src="logo.svg" alt="MedCheck Logo" class="logo-icon">
+            <h1 class="brand-name">MedCheck</h1>
+        </header>
+
+        <!-- Sign-in form section -->
+        <section class="signin-section">
+            <div class="signin-card">
+                <!-- Form header -->
+                <h2 class="signin-title">Sign In</h2>
+                
+                <!-- Sign-in form -->
+                <form class="signin-form" id="adminSigninForm" novalidate>
+                    
+                    <!-- Username field -->
+                    <div class="form-group">
+                        <label for="username" class="sr-only">Username</label>
+                        <div class="input-wrapper">
+                            <svg class="input-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M20.5906 22C20.5906 18.13 16.7406 15 12.0006 15C7.26055 15 3.41055 18.13 3.41055 22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <input 
+                                type="text" 
+                                id="username" 
+                                name="username"
+                                placeholder="Username"
+                                class="form-input"
+                                required
+                                autocomplete="username"
+                                aria-describedby="username-error"
+                            >
+                        </div>
+                        <div class="error-message" id="username-error" role="alert"></div>
+                    </div>
+
+                    <!-- Password field -->
+                    <div class="form-group">
+                        <label for="password" class="sr-only">Password</label>
+                        <div class="input-wrapper">
+                            <svg class="input-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M6 10V8C6 5.79086 7.79086 4 10 4H14C16.2091 4 18 5.79086 18 8V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M5 10H19C20.1046 10 21 10.8954 21 12V18C21 19.1046 20.1046 20 19 20H5C3.89543 20 3 19.1046 3 18V12C3 10.8954 3.89543 10 5 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <input 
+                                type="password" 
+                                id="password" 
+                                name="password"
+                                placeholder="Password"
+                                class="form-input"
+                                required
+                                autocomplete="current-password"
+                                aria-describedby="password-error"
+                            >
+                            <button 
+                                type="button" 
+                                class="password-toggle" 
+                                id="passwordToggle"
+                                aria-label="Toggle password visibility"
+                                tabindex="0"
+                            >
+                                <svg class="eye-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.42012 12.7132C2.28394 12.4975 2.21584 12.3897 2.21584 12C2.21584 11.6103 2.28394 11.5025 2.42012 11.2868C3.54553 9.50484 6.8954 5 12.0002 5C17.105 5 20.4548 9.50484 21.5803 11.2868C21.7164 11.5025 21.7845 11.6103 21.7845 12C21.7845 12.3897 21.7164 12.4975 21.5803 12.7132C20.4548 14.4952 17.105 19 12.0002 19C6.8954 19 3.54553 14.4952 2.42012 12.7132Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12.0002 15C13.6571 15 15.0002 13.6569 15.0002 12C15.0002 10.3431 13.6571 9 12.0002 9C10.3433 9 9.00018 10.3431 9.00018 12C9.00018 13.6569 10.3433 15 12.0002 15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <svg class="eye-slash-icon hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.99902 3L20.999 21M9.8433 9.91364C9.32066 10.4536 8.99902 11.1892 8.99902 12C8.99902 13.6569 10.3422 15 11.999 15C12.8215 15 13.5667 14.669 14.1086 14.133M6.49902 6.64715C4.59972 7.90034 3.15305 9.78394 2.45703 12C3.73128 16.0571 7.52159 19 11.9992 19C13.9881 19 15.8414 18.4194 17.3988 17.4184M10.999 5.04939C11.328 5.01673 11.6617 5 11.9992 5C16.4769 5 20.2672 7.94291 21.5414 12C21.2607 12.894 20.8577 13.7338 20.3522 14.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="error-message" id="password-error" role="alert"></div>
+                    </div>
+
+                    <!-- Remember me checkbox -->
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input 
+                                type="checkbox" 
+                                id="rememberMe" 
+                                name="rememberMe"
+                                class="checkbox-input"
+                            >
+                            <span class="checkbox-custom" aria-hidden="true"></span>
+                            <span class="checkbox-text">Keep me logged in</span>
+                        </label>
+                    </div>
+
+                    <!-- Submit button -->
+                    <button type="submit" class="signin-button" id="signinButton">
+                        <span class="button-text">Login</span>
+                        <div class="loading-spinner hidden" aria-hidden="true"></div>
+                    </button>
+
+                    <!-- Form messages -->
+                    <div class="form-message" id="formMessage" role="alert" aria-live="polite"></div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Background decorative elements -->
+        <div class="decorative-circle" aria-hidden="true"></div>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        // Password toggle functionality
+        document.getElementById('passwordToggle').addEventListener('click', function() {
+            const passwordInput = document.getElementById('password');
+            const eyeIcon = this.querySelector('.eye-icon');
+            const eyeSlashIcon = this.querySelector('.eye-slash-icon');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeIcon.classList.add('hidden');
+                eyeSlashIcon.classList.remove('hidden');
+                this.setAttribute('aria-label', 'Hide password');
+            } else {
+                passwordInput.type = 'password';
+                eyeIcon.classList.remove('hidden');
+                eyeSlashIcon.classList.add('hidden');
+                this.setAttribute('aria-label', 'Show password');
+            }
+        });
+
+        // Form validation and submission
+        document.getElementById('adminSigninForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username');
+            const password = document.getElementById('password');
+            const formMessage = document.getElementById('formMessage');
+            const signinButton = document.getElementById('signinButton');
+            const buttonText = signinButton.querySelector('.button-text');
+            const loadingSpinner = signinButton.querySelector('.loading-spinner');
+            
+            // Clear previous errors
+            clearErrors();
+            
+            let isValid = true;
+            
+            // Validate username
+            if (!username.value.trim()) {
+                showError('username-error', 'Username is required');
+                isValid = false;
+            }
+            
+            // Validate password
+            if (!password.value) {
+                showError('password-error', 'Password is required');
+                isValid = false;
+            }
+            
+            if (isValid) {
+                // Show loading state
+                signinButton.disabled = true;
+                buttonText.classList.add('hidden');
+                loadingSpinner.classList.remove('hidden');
+                
+                // Simulate login process (replace with actual authentication)
+                setTimeout(() => {
+                    // Reset button state
+                    signinButton.disabled = false;
+                    buttonText.classList.remove('hidden');
+                    loadingSpinner.classList.add('hidden');
+                    
+                    // Show success message (replace with actual redirect)
+                    showMessage('Sign in successful! Redirecting...', 'success');
+                    
+                    // In real implementation, redirect to admin dashboard
+                    setTimeout(() => {
+                        // window.location.href = '/admin/dashboard';
+                        console.log('Would redirect to admin dashboard');
+                    }, 1500);
+                }, 2000);
+            }
+        });
+        
+        // Helper functions
+        function clearErrors() {
+            document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+            document.querySelectorAll('.form-input').forEach(el => el.classList.remove('error'));
+        }
+        
+        function showError(elementId, message) {
+            const errorElement = document.getElementById(elementId);
+            const inputElement = errorElement.previousElementSibling.querySelector('.form-input');
+            
+            errorElement.textContent = message;
+            inputElement.classList.add('error');
+        }
+        
+        function showMessage(message, type = 'info') {
+            const messageElement = document.getElementById('formMessage');
+            messageElement.textContent = message;
+            messageElement.className = `form-message ${type}`;
+            messageElement.classList.remove('hidden');
+        }
+
+        // Clear form message when typing
+        document.querySelectorAll('.form-input').forEach(input => {
+            input.addEventListener('input', function() {
+                if (this.classList.contains('error')) {
+                    this.classList.remove('error');
+                    const errorId = this.getAttribute('aria-describedby');
+                    if (errorId) {
+                        document.getElementById(errorId).textContent = '';
+                    }
+                }
+                document.getElementById('formMessage').classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

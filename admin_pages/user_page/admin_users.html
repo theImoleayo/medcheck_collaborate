@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - User Management | MedCheck</title>
+    
+    <link rel="stylesheet" href="admin_users.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro:wght@600&display=swap">
+</head>
+<body>
+    <!-- CSS-only popup toggles -->
+    <input type="checkbox" id="add-user-toggle" class="popup-toggle" aria-label="Toggle add user popup">
+    <input type="checkbox" id="success-toggle" class="popup-toggle" aria-label="Toggle success popup">
+    <input type="checkbox" id="notification-toggle" class="nav-toggle" aria-label="Toggle notifications">
+    <input type="checkbox" id="desktop-notification-toggle" class="nav-toggle" aria-label="Toggle desktop notifications">
+    <input type="checkbox" id="menu-toggle" class="nav-toggle" aria-label="Toggle mobile menu">
+    <input type="checkbox" id="desktop-logout-toggle" class="nav-toggle" aria-label="Toggle logout menu">
+    
+    <!-- Main Admin Dashboard Container -->
+    <div class="admin-dashboard">
+        
+        <!-- Mobile Header (hidden on desktop) -->
+        <header class="mobile-header">
+            <div class="logo-section">
+                <img class="logo-icon" src="logo.svg" alt="MedCheck Logo" loading="lazy">
+                <h1 class="brand-name">Medcheck</h1>
+            </div>
+            <nav class="mobile-nav">
+                <label for="notification-toggle" class="notification-btn">
+                    <img src="Frame 161.svg" alt="Notifications" loading="lazy">
+                </label>
+                
+                <label for="menu-toggle" class="menu-btn">
+                    <img src="menu-line.svg" alt="Menu" loading="lazy">
+                </label>
+            </nav>
+        </header>
+
+        <!-- Desktop Sidebar (hidden on mobile) -->
+        <aside class="desktop-sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <img class="logo-icon" src="logo.svg" alt="MedCheck Logo" loading="lazy">
+                    <h1 class="brand-name">Medcheck</h1>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item">
+                    <img src="home-4-line.svg" alt="" loading="lazy">
+                    <span>Dashboard</span>
+                </a>
+                <div class="nav-item dropdown">
+                    <div class="nav-link">
+                        <img src="box-3-line.svg" alt="" loading="lazy">
+                        <span>Products</span>
+                        <img src="arrow-drop-down-line.svg" alt="" loading="lazy">
+                    </div>
+                </div>
+                <a href="#" class="nav-item">
+                    <img src="news-line.svg" alt="" loading="lazy">
+                    <span>Awareness</span>
+                </a>
+                <a href="#" class="nav-item active">
+                    <img src="vuesax/linear/profile-circle.svg" alt="" loading="lazy">
+                    <span>Users</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <img src="bar-chart-2-line.svg" alt="" loading="lazy">
+                    <span>Analytics</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <img src="settings-3-line.svg" alt="" loading="lazy">
+                    <span>Settings</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Desktop Top Bar (hidden on mobile) -->
+        <header class="desktop-header">
+            <div class="header-actions">
+                <input type="checkbox" id="desktop-logout-toggle" class="nav-toggle" aria-label="Toggle logout menu">
+                <label for="desktop-logout-toggle" class="logout-btn">
+                    <img src="Frame 162.svg" alt="Logout" loading="lazy">
+                </label>
+                
+                <img class="profile-avatar" src="Group 23.png" alt="Profile Avatar" loading="lazy">
+                
+                <input type="checkbox" id="desktop-notification-toggle" class="nav-toggle" aria-label="Toggle notifications">
+                <label for="desktop-notification-toggle" class="notification-btn">
+                    <img src="Frame 161.svg" alt="Notifications" loading="lazy">
+                </label>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Page Header -->
+            <section class="page-header">
+                <div class="header-text">
+                    <h2 class="page-title">Users Management</h2>
+                    <p class="page-subtitle">Manage user accounts, roles and permissions</p>
+                </div>
+                
+                <!-- Add User Button -->
+                <label for="add-user-toggle" class="add-user-btn">Add a new user</label>
+            </section>
+
+            <!-- Stats Cards -->
+            <section class="stats-grid" aria-label="User statistics">
+                <article class="stat-card">
+                    <div class="stat-content">
+                        <h3 class="stat-title">Total Users</h3>
+                        <div class="stat-value">5000+</div>
+                    </div>
+                    <img src="pages-line.svg" alt="" class="stat-icon" loading="lazy">
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-content">
+                        <h3 class="stat-title">Active Users This Week</h3>
+                        <div class="stat-value">40</div>
+                        <div class="stat-change">10% change from last week</div>
+                    </div>
+                    <img src="calendar-todo-fill.svg" alt="" class="stat-icon" loading="lazy">
+                    <img src="Vector.svg" alt="" class="stat-icon-secondary" loading="lazy">
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-content">
+                        <h3 class="stat-title">New Users this Month</h3>
+                        <div class="stat-value">300</div>
+                        <div class="stat-change">50% increase from last month</div>
+                    </div>
+                    <img src="Vector.svg" alt="" class="stat-icon" loading="lazy">
+                    <img src="vuesax/linear/message.svg" alt="" class="stat-icon-secondary" loading="lazy">
+                </article>
+            </section>
+
+            <!-- User Tables -->
+            <section class="users-section">
+                <h3 class="section-title">Users</h3>
+                
+                <!-- Regular Users Table -->
+                <div class="table-container">
+                    <table class="users-table" role="table" aria-label="Regular users">
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>Role</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="user-row">
+                                <td data-label="Username">
+                                    <input type="checkbox" id="user-1" class="user-toggle">
+                                    <label for="user-1" class="user-name">Mike Obi</label>
+                                </td>
+                                <td data-label="Role">User</td>
+                                <td data-label="Status">
+                                    <span class="status-badge offline">
+                                        <img src="Ellipse 17.svg" alt="" class="status-dot" loading="lazy">
+                                        offline
+                                    </span>
+                                </td>
+                                <td data-label="Action">
+                                    <button class="action-btn delete" aria-label="Delete user Mike Obi">
+                                        <img src="delete-bin-5-line.svg" alt="" loading="lazy">
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="user-row">
+                                <td data-label="Username">
+                                    <input type="checkbox" id="user-2" class="user-toggle">
+                                    <label for="user-2" class="user-name">Jane Doe</label>
+                                </td>
+                                <td data-label="Role">User</td>
+                                <td data-label="Status">
+                                    <span class="status-badge online">
+                                        <img src="Ellipse 17.svg" alt="" class="status-dot" loading="lazy">
+                                        online
+                                    </span>
+                                </td>
+                                <td data-label="Action">
+                                    <button class="action-btn delete" aria-label="Delete user Jane Doe">
+                                        <img src="delete-bin-5-line.svg" alt="" loading="lazy">
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="user-row">
+                                <td data-label="Username">
+                                    <input type="checkbox" id="user-3" class="user-toggle">
+                                    <label for="user-3" class="user-name">Usman Ali</label>
+                                </td>
+                                <td data-label="Role">User</td>
+                                <td data-label="Status">
+                                    <span class="status-badge online">
+                                        <img src="Ellipse 17.svg" alt="" class="status-dot" loading="lazy">
+                                        online
+                                    </span>
+                                </td>
+                                <td data-label="Action">
+                                    <button class="action-btn delete" aria-label="Delete user Usman Ali">
+                                        <img src="delete-bin-5-line.svg" alt="" loading="lazy">
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="user-row">
+                                <td data-label="Username">
+                                    <input type="checkbox" id="user-4" class="user-toggle">
+                                    <label for="user-4" class="user-name">Pharm Chigozie Obi</label>
+                                </td>
+                                <td data-label="Role">User</td>
+                                <td data-label="Status">
+                                    <span class="status-badge offline">
+                                        <img src="Ellipse 18.svg" alt="" class="status-dot" loading="lazy">
+                                        offline
+                                    </span>
+                                </td>
+                                <td data-label="Action">
+                                    <button class="action-btn delete" aria-label="Delete user Pharm Chigozie Obi">
+                                        <img src="delete-bin-5-line.svg" alt="" loading="lazy">
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="user-row">
+                                <td data-label="Username">
+                                    <input type="checkbox" id="user-5" class="user-toggle">
+                                    <label for="user-5" class="user-name">Amanda Lee</label>
+                                </td>
+                                <td data-label="Role">User</td>
+                                <td data-label="Status">
+                                    <span class="status-badge online">
+                                        <img src="Ellipse 17.svg" alt="" class="status-dot" loading="lazy">
+                                        online
+                                    </span>
+                                </td>
+                                <td data-label="Action">
+                                    <button class="action-btn delete" aria-label="Delete user Amanda Lee">
+                                        <img src="delete-bin-5-line.svg" alt="" loading="lazy">
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Admin/Staff Section -->
+                <h3 class="section-title">Admin/Staff</h3>
+                
+                <div class="table-container">
+                    <table class="users-table" role="table" aria-label="Admin and staff users">
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>Role</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="user-row">
+                                <td data-label="Username">
+                                    <input type="checkbox" id="admin-1" class="user-toggle">
+                                    <label for="admin-1" class="user-name">Jennifer Ene</label>
+                                </td>
+                                <td data-label="Role">Admin</td>
+                                <td data-label="Status">
+                                    <span class="status-badge online">
+                                        <img src="Ellipse 17.svg" alt="" class="status-dot" loading="lazy">
+                                        online
+                                    </span>
+                                </td>
+                                <td data-label="Action">
+                                    <div class="action-group">
+                                        <button class="action-btn delete" aria-label="Delete admin Jennifer Ene">
+                                            <img src="delete-bin-5-line.svg" alt="" loading="lazy">
+                                        </button>
+                                        <button class="action-btn pause" aria-label="Pause admin Jennifer Ene">
+                                            <img src="pause-mini-line.svg" alt="" loading="lazy">
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="user-row">
+                                <td data-label="Username">
+                                    <input type="checkbox" id="admin-2" class="user-toggle">
+                                    <label for="admin-2" class="user-name">Fortune Nwachukwu</label>
+                                </td>
+                                <td data-label="Role">Admin</td>
+                                <td data-label="Status">
+                                    <span class="status-badge online">
+                                        <img src="Ellipse 17.svg" alt="" class="status-dot" loading="lazy">
+                                        online
+                                    </span>
+                                </td>
+                                <td data-label="Action">
+                                    <div class="action-group">
+                                        <button class="action-btn delete" aria-label="Delete admin Fortune Nwachukwu">
+                                            <img src="delete-bin-5-line.svg" alt="" loading="lazy">
+                                        </button>
+                                        <button class="action-btn pause" aria-label="Pause admin Fortune Nwachukwu">
+                                            <img src="pause-mini-line.svg" alt="" loading="lazy">
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="user-row">
+                                <td data-label="Username">
+                                    <input type="checkbox" id="admin-3" class="user-toggle">
+                                    <label for="admin-3" class="user-name">Adegbola Abiodun</label>
+                                </td>
+                                <td data-label="Role">Admin</td>
+                                <td data-label="Status">
+                                    <span class="status-badge online">
+                                        <img src="Ellipse 17.svg" alt="" class="status-dot" loading="lazy">
+                                        online
+                                    </span>
+                                </td>
+                                <td data-label="Action">
+                                    <div class="action-group">
+                                        <button class="action-btn delete" aria-label="Delete admin Adegbola Abiodun">
+                                            <img src="delete-bin-5-line.svg" alt="" loading="lazy">
+                                        </button>
+                                        <button class="action-btn pause" aria-label="Pause admin Adegbola Abiodun">
+                                            <img src="pause-mini-line.svg" alt="" loading="lazy">
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="user-row">
+                                <td data-label="Username">
+                                    <input type="checkbox" id="manager-1" class="user-toggle">
+                                    <label for="manager-1" class="user-name">Ola</label>
+                                </td>
+                                <td data-label="Role">Project Manager</td>
+                                <td data-label="Status">
+                                    <span class="status-badge offline">
+                                        <img src="Ellipse 17.svg" alt="" class="status-dot" loading="lazy">
+                                        offline
+                                    </span>
+                                </td>
+                                <td data-label="Action">
+                                    <div class="action-group">
+                                        <button class="action-btn delete" aria-label="Delete project manager Ola">
+                                            <img src="delete-bin-5-line.svg" alt="" loading="lazy">
+                                        </button>
+                                        <button class="action-btn pause" aria-label="Pause project manager Ola">
+                                            <img src="pause-mini-line.svg" alt="" loading="lazy">
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <!-- Mobile Footer (copied from contact_us) -->
+        <footer class="mobile-footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-container">
+                        <img class="logo-icon" src="logo.svg" alt="MedCheck Logo" loading="lazy">
+                        <h2 class="brand-name">Medcheck</h2>
+                    </div>
+                </div>
+                
+                <div class="footer-sections">
+                    <div class="footer-services">
+                        <h3 class="footer-heading">Services</h3>
+                        <ul class="footer-links">
+                            <li><a href="#" class="footer-link">Verification</a></li>
+                            <li><a href="#" class="footer-link">Reports</a></li>
+                            <li><a href="#" class="footer-link">Awareness</a></li>
+                            <li><a href="#" class="footer-link">Users</a></li>
+                            <li><a href="#" class="footer-link">Analytics</a></li>
+                        </ul>
+                        
+                        <h3 class="footer-heading">More</h3>
+                        <ul class="footer-links">
+                            <li><a href="#" class="footer-link">About Us</a></li>
+                            <li><a href="#" class="footer-link">Our Team</a></li>
+                            <li><a href="#" class="footer-link">Testimonies</a></li>
+                            <li><a href="#" class="footer-link">FAQs</a></li>
+                        </ul>
+                        
+                        <h3 class="footer-heading">Help</h3>
+                        <ul class="footer-links">
+                            <li><a href="#" class="footer-link">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="newsletter">
+                        <div class="newsletter-text">
+                            <p>Subscribe to our</p>
+                            <p>newsletter</p>
+                        </div>
+                        <form class="newsletter-form" role="form" aria-label="Newsletter subscription">
+                            <input type="email" placeholder="Enter your email" required aria-label="Email address">
+                            <button type="submit" class="submit-btn" aria-label="Subscribe to newsletter">
+                                <img src="Submit.svg" alt="Submit" loading="lazy">
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <div class="social-container">
+                        <a href="#" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                <path d="M279.14 288l14.22-92.66h-88.91V127.5c0-25.35 12.42-50.06 52.24-50.06H293V6.26S273.48 0 252.36 0c-73.22 0-121.33 44.38-121.33 124.72V195.3H86.41V288h44.62v224h92.66V288z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <path d="M459.4 151.7c.3 4.1 .3 8.2 .3 12.3 0 125.8-95.8 270.9-270.9 270.9-53.9 0-104-15.8-146.2-43.1 7.6 .9 15.2 1.2 23.1 1.2 44.7 0 85.8-15.2 118.4-41.2-41.9-.9-77.1-28.4-89.2-66.5 5.8 .9 11.7 1.5 17.8 1.5 8.6 0 17-1.2 24.8-3.3-43.9-8.9-77.1-47.8-77.1-94.5v-1.2c12.9 7.2 27.9 11.7 43.9 12.3-25.8-17.3-42.9-46.6-42.9-79.8 0-17.6 4.7-34.2 12.9-48.4 47.5 58.5 118.4 96.9 198.4 101-1.5-7.2-2.4-14.7-2.4-22.3 0-53.6 43.6-97.2 97.2-97.2 28 0 53.4 11.7 71.2 30.7 22.3-4.4 43.3-12.3 62.1-23.6-7.3 22.6-22.6 41.9-42.9 54.1 19.8-2.1 38.7-7.6 56.1-15.2-13.5 19.5-30.5 36.7-50.2 50.2z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <div class="footer-legal">
+                        <div class="legal-links">
+                            <a href="#" class="footer-link">Terms & Conditions</a>
+                            <a href="#" class="footer-link">Privacy Policy</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-copyright">
+                    © 2025 MedCheck. All Rights Reserved.
+                </div>
+            </div>
+        </footer>
+        
+        <!-- Desktop Footer -->
+        <footer class="desktop-footer">
+            <div class="desktop-footer-content">
+                <div class="footer-section logo-section">
+                    <div class="logo-container">
+                        <img class="logo-icon" src="logo.svg" alt="MedCheck Logo" loading="lazy">
+                        <h2 class="brand-name">Medcheck</h2>
+                    </div>
+                    <p class="footer-description">Protecting Nigerian consumers through product verification and authenticity assurance.</p>
+                </div>
+                
+                <div class="footer-section services-section">
+                    <h3 class="footer-heading">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Product Verification</a></li>
+                        <li><a href="#" class="footer-link">Report Fake Products</a></li>
+                        <li><a href="#" class="footer-link">Public Awareness</a></li>
+                        <li><a href="#" class="footer-link">User Management</a></li>
+                        <li><a href="#" class="footer-link">Analytics Dashboard</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section company-section">
+                    <h3 class="footer-heading">Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">About Us</a></li>
+                        <li><a href="#" class="footer-link">Our Mission</a></li>
+                        <li><a href="#" class="footer-link">Team</a></li>
+                        <li><a href="#" class="footer-link">Testimonials</a></li>
+                        <li><a href="#" class="footer-link">FAQs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section contact-section">
+                    <h3 class="footer-heading">Contact & Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Contact Us</a></li>
+                        <li><a href="#" class="footer-link">Support Center</a></li>
+                        <li><a href="#" class="footer-link">API Documentation</a></li>
+                        <li><a href="#" class="footer-link">System Status</a></li>
+                    </ul>
+                    
+                    <div class="newsletter-desktop">
+                        <h4 class="newsletter-title">Stay Updated</h4>
+                        <form class="newsletter-form-desktop" role="form" aria-label="Newsletter subscription">
+                            <input type="email" placeholder="Enter your email" required aria-label="Email address">
+                            <button type="submit" class="submit-btn-desktop" aria-label="Subscribe to newsletter">
+                                <img src="Submit.svg" alt="Submit" loading="lazy">
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="social-container">
+                        <a href="#" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                <path d="M279.14 288l14.22-92.66h-88.91V127.5c0-25.35 12.42-50.06 52.24-50.06H293V6.26S273.48 0 252.36 0c-73.22 0-121.33 44.38-121.33 124.72V195.3H86.41V288h44.62v224h92.66V288z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <path d="M459.4 151.7c.3 4.1 .3 8.2 .3 12.3 0 125.8-95.8 270.9-270.9 270.9-53.9 0-104-15.8-146.2-43.1 7.6 .9 15.2 1.2 23.1 1.2 44.7 0 85.8-15.2 118.4-41.2-41.9-.9-77.1-28.4-89.2-66.5 5.8 .9 11.7 1.5 17.8 1.5 8.6 0 17-1.2 24.8-3.3-43.9-8.9-77.1-47.8-77.1-94.5v-1.2c12.9 7.2 27.9 11.7 43.9 12.3-25.8-17.3-42.9-46.6-42.9-79.8 0-17.6 4.7-34.2 12.9-48.4 47.5 58.5 118.4 96.9 198.4 101-1.5-7.2-2.4-14.7-2.4-22.3 0-53.6 43.6-97.2 97.2-97.2 28 0 53.4 11.7 71.2 30.7 22.3-4.4 43.3-12.3 62.1-23.6-7.3 22.6-22.6 41.9-42.9 54.1 19.8-2.1 38.7-7.6 56.1-15.2-13.5 19.5-30.5 36.7-50.2 50.2z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <div class="legal-links">
+                        <a href="#" class="footer-link">Terms & Conditions</a>
+                        <a href="#" class="footer-link">Privacy Policy</a>
+                        <a href="#" class="footer-link">Cookie Policy</a>
+                    </div>
+                    
+                    <div class="footer-copyright">
+                        © 2025 MedCheck. All Rights Reserved.
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Add User Popup -->
+    <div class="popup-overlay add-user-popup">
+        <div class="popup-content">
+            <form class="add-user-form" role="form" aria-label="Add new user">
+                <h2 class="popup-title">Add New User</h2>
+                
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <img src="vuesax/linear/user.svg" alt="" loading="lazy">
+                        <input type="text" placeholder="Enter Name" required aria-label="Full name">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <img src="mail-line.svg" alt="" loading="lazy">
+                        <input type="email" placeholder="Enter Email" required aria-label="Email address">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <img src="ng logo.svg" alt="" loading="lazy">
+                        <input type="tel" placeholder="Enter Phone Number" required aria-label="Phone number">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="select-wrapper">
+                        <select required aria-label="Select user role">
+                            <option value="">Role</option>
+                            <option value="user">User</option>
+                            <option value="admin">Admin</option>
+                            <option value="manager">Project Manager</option>
+                        </select>
+                        <img src="arrow-drop-down-line.svg" alt="" loading="lazy">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <img src="vuesax/linear/lock.svg" alt="" loading="lazy">
+                        <input type="password" placeholder="Create Password" required aria-label="Create password">
+                        <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                            <img src="vuesax/linear/eye.svg" alt="" loading="lazy">
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <img src="vuesax/linear/lock.svg" alt="" loading="lazy">
+                        <input type="password" placeholder="Confirm Password" required aria-label="Confirm password">
+                        <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                            <img src="vuesax/linear/eye.svg" alt="" loading="lazy">
+                        </button>
+                    </div>
+                </div>
+                
+                <input type="checkbox" id="success-toggle" class="popup-toggle">
+                <label for="success-toggle" class="submit-btn">Add User</label>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Popup -->
+    <div class="popup-overlay success-popup">
+        <div class="popup-content success-content">
+            <img src="vuesax/linear/verify.svg" alt="" class="success-icon" loading="lazy">
+            <h2 class="success-title">🎉  Successful</h2>
+            <div class="success-message">
+                <p><strong>New Users !!!</strong></p>
+                <p>Your user has been created successfully.</p>
+            </div>
+            <label for="success-toggle" class="done-btn">Done</label>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="popup-overlay mobile-menu">
+        <nav class="mobile-menu-content" role="navigation" aria-label="Mobile navigation">
+            <a href="#" class="mobile-menu-item">Dashboard</a>
+            <a href="#" class="mobile-menu-item">Verification</a>
+            <a href="#" class="mobile-menu-item">Reports</a>
+            <a href="#" class="mobile-menu-item">Awareness</a>
+            <a href="#" class="mobile-menu-item">User</a>
+            <a href="#" class="mobile-menu-item">Analytics</a>
+            <a href="#" class="mobile-menu-item">Settings</a>
+            <a href="#" class="mobile-menu-item">Logout</a>
+        </nav>
+    </div>
+
+    <!-- Notification Overlay -->
+    <div class="popup-overlay notification-panel">
+        <div class="notification-content">
+            <div class="notification-item">
+                <img src="Ellipse 9.png" alt="User avatar" class="notification-avatar" loading="lazy">
+                <div class="notification-text">
+                    <div class="notification-header">
+                        <span class="notification-user">Miss Jennifer</span>
+                        <span class="notification-action">View</span>
+                    </div>
+                    <div class="notification-message">Fake product everywhere</div>
+                    <div class="notification-time">20m ago</div>
+                </div>
+            </div>
+            
+            <div class="notification-item">
+                <img src="Ellipse 9.png" alt="User avatar" class="notification-avatar" loading="lazy">
+                <div class="notification-text">
+                    <div class="notification-header">
+                        <span class="notification-user">Miss Jennifer</span>
+                        <span class="notification-action">View</span>
+                    </div>
+                    <div class="notification-message">Fake product everywhere</div>
+                    <div class="notification-time">20m ago</div>
+                </div>
+            </div>
+            
+            <div class="notification-item">
+                <img src="Ellipse 9.png" alt="User avatar" class="notification-avatar" loading="lazy">
+                <div class="notification-text">
+                    <div class="notification-header">
+                        <span class="notification-user">Miss Jennifer</span>
+                        <span class="notification-action">View</span>
+                    </div>
+                    <div class="notification-message">Fake product everywhere</div>
+                    <div class="notification-time">20m ago</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Desktop Logout Menu -->
+    <div class="popup-overlay logout-menu">
+        <div class="logout-content">
+            <span class="logout-text">Logout</span>
+        </div>
+    </div>
+
+    <!-- User Detail Overlays (CSS-only expandable sections) -->
+    <div class="user-details" id="user-1-details">
+        <div class="user-detail-content">
+            <h4>Mike Obi - User Details</h4>
+            <p>Email: mike.obi@example.com</p>
+            <p>Role: Regular User</p>
+            <p>Status: Offline</p>
+            <p>Last Login: 2 hours ago</p>
+        </div>
+    </div>
+
+    <div class="user-details" id="user-2-details">
+        <div class="user-detail-content">
+            <h4>Jane Doe - User Details</h4>
+            <p>Email: jane.doe@example.com</p>
+            <p>Role: Regular User</p>
+            <p>Status: Online</p>
+            <p>Last Login: Active now</p>
+        </div>
+    </div>
+
+    <!-- Additional user detail overlays would follow the same pattern -->
+</body>
+</html>
