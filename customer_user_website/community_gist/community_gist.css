@@ -1,0 +1,390 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+.post-1-parent {
+  max-width: 100%;
+}
+body{
+    width: 100vw;
+  font-family: "DM Sans", sans-serif;
+}
+.community-gist {
+  width: 222px;
+  font-size: 30px;
+  letter-spacing: -0.03em;
+  line-height: 36px;
+  color: #001600;
+  display: flex;
+  justify-content: center;
+}
+.group-child {
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+}
+.mr-abiodun {
+  letter-spacing: -0.03em;
+  line-height: 24px;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.lagos-nigeria {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  color: #b3b3b3;
+}
+.mr-abiodun-parent {
+  position: absolute;
+  top: 0px;
+  left: 48px;
+  width: 229px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 7px;
+}
+.ellipse-parent {
+  width: 277px;
+  position: relative;
+  height: 47px;
+}
+.frame-child {
+  width: 24px;
+  height: 24px;
+}
+.group-parent {
+  height: 6rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  gap: 17px;
+  background: linear-gradient(#e5feeb, #e5feeb), #fff;
+}
+.h {
+  align-self: stretch;
+  position: relative;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  color: #ccc;
+}
+.mr-abiodun-group {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 7px;
+}
+.frame-wrapper {
+  width: 217px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.ellipse-group {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 335px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6px;
+}
+.post-1-inner {
+  align-self: self-start;
+  position: relative;
+  height: 44px;
+}
+.police-adopt-early-container {
+  width: 335px;
+  letter-spacing: -0.31px;
+  line-height: 21px;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.title {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.picvidoe-icon {
+  align-self: stretch;
+  position: relative;
+  max-width: 100%;
+  height: 182px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.comments {
+  letter-spacing: 0.06px;
+  line-height: 13px;
+}
+.comments-parent {
+  width: 246px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0px 5px;
+  box-sizing: border-box;
+  gap: 20px;
+}
+.k {
+  position: absolute;
+  top: 1px;
+  left: 24px;
+  letter-spacing: 0.06px;
+  line-height: 13px;
+}
+.clip-path-group {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.component-3 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 15px;
+  height: 15px;
+  overflow: hidden;
+}
+.k-parent {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 44px;
+  height: 15px;
+}
+.views-bar {
+  width: 336px;
+  position: relative;
+  height: 15px;
+  flex-shrink: 0;
+  font-size: 11px;
+}
+.comment-cards-child {
+  width: 40px;
+  position: relative;
+  border-radius: 50%;
+  height: 40px;
+  object-fit: cover;
+}
+.miss-jennifer {
+  position: relative;
+  letter-spacing: -0.31px;
+  line-height: 21px;
+}
+.miss-jennifer-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 10px;
+}
+.i-have-same {
+  width: 268px;
+  position: relative;
+  line-height: 16px;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.i-have-same-experience-too-it-wrapper {
+  align-self: stretch;
+  border-radius: 10px;
+  background-color: #ccfed7;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-size: 12px;
+}
+.frame-group {
+  width: 286px;
+  border-radius: 0px 5px 5px 5px;
+  background-color: #ccfed7;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.comment-cards {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.i-experienced-something {
+  width: 268px;
+  position: relative;
+  line-height: 16px;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.i-experienced-something-simila-wrapper {
+  align-self: stretch;
+  border-radius: 10px;
+  background-color: #fef2d5;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-size: 12px;
+}
+.frame-container {
+  width: 286px;
+  border-radius: 0px 5px 5px 5px;
+  background-color: #fef2d5;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.my-experience-is-similar-its-wrapper {
+  align-self: stretch;
+  border-radius: 10px;
+  background-color: #ffeacc;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-size: 12px;
+}
+.frame-div {
+  width: 286px;
+  border-radius: 0px 5px 5px 5px;
+  background-color: #ffeacc;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.comments1 {
+  align-self: stretch;
+  height: 177px;
+  overflow-x: auto;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 15px;
+}
+.all-comment {
+  align-self: stretch;
+  height: 574px;
+
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 15px;
+}
+.write-comments {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+}
+textarea {
+  display: flex;
+  align-items: center;
+  border: none;
+  outline: none;
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  resize: none;
+  width: 250px;
+  background: #e6e6e6;
+}
+.l1-parent {
+  width: 336px;
+  border-radius: 5px;
+  background-color: #e6e6e6;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+  box-sizing: border-box;
+  gap: 3px;
+  color: #b3b3b3;
+  height: 50px;
+}
+.post-1 {
+  align-self: stretch;
+  background-color: #fafafa;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  gap: 20px;
+}
+.post-2 {
+  align-self: stretch;
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  gap: 20px;
+}
+.miss-jennier {
+  align-self: stretch;
+  letter-spacing: -0.31px;
+  line-height: 21px;
+  font-weight: 600;
+}
+
+/* .table-container {
+  border-radius: 16px;
+  padding: 8px;
+}
+.sr-only {
+  font-size: 30px;
+  font-weight: 600;
+}
+.table {
+  width: 100%;
+  padding-block: 3rem;
+}
+th {
+  font-size: 25px;
+}
+.table thead th {
+  text-align: left;
+  font-weight: 600;
+}
+td,
+tr {
+  padding-block: 10px;
+} */
+.table {
+  border-collapse: collapse;
+}

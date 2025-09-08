@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>MedCheck SignIn Page</title>
+    <link rel="stylesheet" href="signin.css" />
+  </head>
+  <body>
+    <header id="frameContainer">
+      <div class="logo-parent" >
+         <img src="images/logo.svg" alt="logo.svg" />
+      <a class="medcheck" href="#">Medcheck</a>
+      </div>
+        <div class="hamburger">
+          <button class="dropdownbtn">
+            <img src="images/menu-line.svg" alt="" />
+          </button>
+          <div id="myDropdown" class="dropdown-content">
+            <ul>
+              <li class="menu">
+                <a class="service" href="#">Verify Product</a>
+              </li>
+              <li class="menu">
+                <a class="service" target="_blank" href="report-a-product.html"
+                  >Report Product</a
+                >
+              </li>
+              <li class="menu">
+                <a class="service" target="_blank" href="awareness-page.html">Awareness</a>
+              </li>
+              <li class="menu"><a class="service" href="#">Profile</a></li>
+              <li class="menu"><a class="service" href="#">History</a></li>
+              <li class="menu">
+                <a class="service" href="community-gist.html">Community</a>
+              </li>
+              <li class="menu">
+                <a class="service" href="index.html">Testimonies</a>
+              </li>
+              <li class="menu"><a class="service" href="#">Our Team</a></li>
+              <li class="menu"><a class="service" href="#">About Us</a></li>
+              <li class="menu"><a class="service" href="#">Contact Us</a></li>
+              <li class="menu"><a class="service" href="#">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+    </header>
+    <main class="bg-image">
+      <img class="bg" src="images/background-image-sign-in.png" alt="" />
+      <section class="form">
+        <div class="sign-in-container">
+          <b class="sign-in">Sign in</b>
+          <!-- Username -->
+           <br><br><br>
+          <div class="input-box">
+            <img src="images/user.svg" alt="" />
+            <input type="text" placeholder="Username" required />
+          </div>
+          <!-- Password -->
+          <div class="input-box">
+            <img src="images/lock.svg" alt="" />
+            <input type="password" placeholder="••••••••••••••••••••" required />
+            <i
+              class="fa-solid fa-eye-slash toggle-password"
+              id="togglePassword"
+            ></i>
+          </div>
+          <!-- Options -->
+          <div class="options">
+            <label class="checkbox-container">
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+              Keep me logged in
+            </label>
+            <a href="#">Forgot password?</a>
+          </div>
+          <!-- Login Button -->
+          <button class="btn"><a href="#">Login</a></button>
+          <!-- Divider -->
+          <div class="divider">OR</div>
+          <!-- Social Logins -->
+          <div class="social-btn">
+            <img src="images/google-fill.svg" alt="" />
+            <a href="#">Sign in with Google</a>
+          </div>
+          <div class="social-btn">
+            <img src="images/linkedin-box-fill.svg" alt="" />
+            <a href="#">LinkedIn</a>
+          </div>
+          <div class="social-btn">
+            <img src="images/facebook-circle-fill.svg" alt="" />
+            <a href="#">Sign in with Facebook</a>
+          </div>
+          <!-- Signup -->
+          <p class="signup">Don’t have an account? <a href="signup.html">Signup</a></p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

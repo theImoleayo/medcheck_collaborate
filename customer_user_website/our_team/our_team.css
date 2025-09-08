@@ -1,928 +1,480 @@
-/* ==========================================================================
-   Our Team Page - Mobile-First Responsive CSS
-   ========================================================================== */
-
-/* Reset and Base Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Screen reader only utility class */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-body {
-  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background-color: #fff;
-}
-
-/* Main Container */
-.our-team-page {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* ==========================================================================
-   Header & Navigation - Mobile First
-   ========================================================================== */
-
-.header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: #fff;
-  border-bottom: 1px solid #e5e7eb;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Brand */
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-weight: 600;
-  color: #059669;
-}
-
-.logo-icon {
-  width: 32px;
-  height: 32px;
-}
-
-.brand-name {
-  font-size: 1.25rem;
-  font-weight: 700;
-}
-
-/* Desktop Navigation - Hidden on mobile */
-.desktop-nav {
-  display: none;
-}
-
-.nav-item {
-  text-decoration: none;
-  color: #374151;
-  padding: 0.5rem 1rem;
-  border-radius: 0.375rem;
-  transition: background-color 0.2s;
-}
-
-.nav-item:hover {
-  background-color: #f3f4f6;
-}
-
-/* Header Actions */
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  position: relative;
-}
-
-/* Profile, Notification, and Mobile Menu Buttons */
-.profile-btn,
-.notification-btn,
-.mobile-menu-btn {
-  background: none;
-  border: none;
-  padding: 0.5rem;
-  cursor: pointer;
-  border-radius: 0.375rem;
-  transition: background-color 0.2s;
-}
-
-.profile-btn:hover,
-.notification-btn:hover,
-.mobile-menu-btn:hover {
-  background-color: #f3f4f6;
-}
-
-.profile-btn img,
-.notification-btn img,
-.mobile-menu-btn img {
-  width: 20px;
-  height: 20px;
-}
-
-/* Desktop-only user profile */
-.desktop-only {
-  display: none;
-}
-
-/* Dropdown Menus */
-.profile-dropdown,
-.notification-dropdown {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background: white;
-  border: 1px solid #e5e7eb;
-  border-radius: 0.5rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  min-width: 200px;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-10px);
-  transition: all 0.2s;
-  z-index: 1001;
-}
-
-/* Show dropdowns when toggles are checked */
-.profile-toggle:checked ~ .profile-dropdown,
-.notification-toggle:checked ~ .notification-dropdown {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.dropdown-item {
-  display: block;
-  padding: 0.75rem 1rem;
-  text-decoration: none;
-  color: #374151;
-  border-bottom: 1px solid #f3f4f6;
-}
-
-.dropdown-item:hover {
-  background-color: #f9fafb;
-}
-
-.dropdown-item:last-child {
-  border-bottom: none;
-}
-
-/* Notification Dropdown Specific Styles */
-.notification-item {
-  display: flex;
-  gap: 0.75rem;
-  padding: 1rem;
-  border-bottom: 1px solid #f3f4f6;
-}
-
-.notification-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.notification-content {
-  flex: 1;
-}
-
-.notification-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.25rem;
-}
-
-.notification-name {
-  font-weight: 600;
-  font-size: 0.875rem;
-}
-
-.notification-view {
-  background: #059669;
-  color: white;
-  border: none;
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.25rem;
-  font-size: 0.75rem;
-  cursor: pointer;
-}
-
-.notification-text {
-  font-size: 0.875rem;
-  color: #6b7280;
-  margin-bottom: 0.25rem;
-}
-
-.notification-time {
-  font-size: 0.75rem;
-  color: #9ca3af;
-}
-
-/* Mobile Menu */
-.mobile-menu {
-  position: fixed;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: white;
-  border-top: 1px solid #e5e7eb;
-  box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
-  transform: translateY(0);
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s;
-  z-index: 999;
-  max-height: calc(100vh - 80px);
-  overflow-y: auto;
-}
-
-.mobile-menu-toggle:checked ~ .mobile-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(-100%);
-}
-
-.mobile-nav-item {
-  display: block;
-  padding: 0.75rem 0;
-  text-decoration: none;
-  color: #374151;
-  border-bottom: 1px solid #f3f4f6;
-  font-size: 1.125rem;
-}
-
-.mobile-nav-item:hover {
-  color: #059669;
-}
-
-.mobile-nav-item:last-child {
-  border-bottom: none;
-}
-
-/* ==========================================================================
-   Main Content
-   ========================================================================== */
-
-.main-content {
-  flex: 1;
-}
-
-/* Hero Section */
-.hero {
-  position: relative;
-  padding: 3rem 1rem;
-  text-align: center;
-  background: linear-gradient(135deg, #059669 0%, #047857 100%);
-  color: white;
-  overflow: hidden;
-}
-
-.hero-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
-  opacity: 0.1;
-}
-
-.hero-title {
-  position: relative;
-  z-index: 1;
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  line-height: 1.2;
-}
-
-.hero-description {
-  position: relative;
-  z-index: 1;
-  font-size: 1.125rem;
-  opacity: 0.9;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-/* Team Section */
-.team-section {
-  padding: 3rem 1rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Team Grid */
-.team-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-}
-
-/* Team Member Card */
-.team-member {
-  background: white;
-  border-radius: 0.75rem;
-  overflow: hidden;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  border: 1px solid #e5e7eb;
-}
-
-.team-member:hover {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
-}
-
-.member-card {
-  display: block;
-  padding: 1.5rem;
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  position: relative;
-}
-
-.member-card:hover {
-  background-color: #f9fafb;
-}
-
-.member-image-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
-
-.member-image {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #059669;
-}
-
-.member-name {
-  font-size: 1.25rem;
-  font-weight: 600;
-  text-align: center;
-  margin-bottom: 0.5rem;
-  color: #1f2937;
-}
-
-.member-role {
-  display: block;
-  text-align: center;
-  color: #059669;
-  font-weight: 500;
-  margin-bottom: 1rem;
-}
-
-.expand-indicator {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  font-size: 0.875rem;
-  color: #6b7280;
-  transition: transform 0.3s;
-}
-
-/* Member Details - Initially Hidden */
-.member-details {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: all 0.4s ease-in-out;
-  padding: 0 1.5rem;
-  background-color: #f9fafb;
-  border-top: 1px solid #e5e7eb;
-}
-
-/* Show details when radio button is checked */
-.member-toggle:checked ~ .member-card .expand-indicator {
-  transform: rotate(180deg);
-}
-
-.member-toggle:checked ~ .member-details {
-  max-height: 500px;
-  opacity: 1;
-  padding: 1.5rem;
-}
-
-/* Member Bio */
-.member-bio {
-  margin-bottom: 1.5rem;
-}
-
-.member-bio p {
-  color: #4b5563;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-.member-bio p:last-child {
-  margin-bottom: 0;
-}
-
-/* Member Social */
-.member-social {
-  border-top: 1px solid #e5e7eb;
-  padding-top: 1rem;
-}
-
-.social-handle {
-  display: block;
-  font-weight: 500;
-  color: #059669;
-  margin-bottom: 0.75rem;
-  font-size: 0.875rem;
-}
-
-.social-links {
-  display: flex;
-  gap: 0.75rem;
-  justify-content: center;
-}
-
-.social-link {
-  display: inline-block;
-  padding: 0.5rem;
-  border-radius: 0.375rem;
-  transition: all 0.2s;
-  background-color: #f3f4f6;
-}
-
-.social-link:hover {
-  background-color: #059669;
-  transform: translateY(-2px);
-}
-
-.social-link img {
-  width: 20px;
-  height: 20px;
-  filter: grayscale(1);
-  transition: filter 0.2s;
-}
-
-.social-link:hover img {
-  filter: brightness(0) invert(1);
-}
-
-/* ==========================================================================
-   Footer - Matching Contact Us Page Style
-   ========================================================================== */
-
-.footer {
-  background-color: #005f00;
-  color: white;
-  margin-top: auto;
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 3rem 1rem 1rem;
-}
-
-.footer-brand {
-  margin-bottom: 2rem;
-}
-
-.footer-logo {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 1rem;
-}
-
-.footer-logo img {
-  width: 40px;
-  height: 40px;
-}
-
-.footer-sections {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  margin-bottom: 2rem;
-}
-
-.footer-section h3 {
-  color: #ffffff;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  font-size: 1.125rem;
-}
-
-.footer-section nav {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.footer-section a {
-  color: #e0e0e0;
-  text-decoration: none;
-  transition: color 0.2s;
-  padding: 0.25rem 0;
-}
-
-.footer-section a:hover {
-  color: #ffffff;
-}
-
-/* Newsletter Section */
-.newsletter-section h3 {
-  margin-bottom: 1rem;
-}
-
-.newsletter-form {
-  margin-top: 1rem;
-}
-
-.newsletter-input {
-  display: flex;
-  gap: 0.5rem;
-  max-width: 300px;
-}
-
-.newsletter-input input {
-  flex: 1;
-  padding: 0.75rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 0.375rem;
-  background-color: rgba(255, 255, 255, 0.1);
-  color: white;
-  font-size: 0.875rem;
-}
-
-.newsletter-input input::placeholder {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.newsletter-input button {
-  background-color: #ffffff;
-  color: #005f00;
-  border: none;
-  border-radius: 0.375rem;
-  padding: 0.75rem;
-  cursor: pointer;
-  transition: all 0.2s;
-  font-weight: 600;
-}
-
-.newsletter-input button:hover {
-  background-color: rgba(255, 255, 255, 0.9);
-  transform: translateY(-1px);
-}
-
-.newsletter-input button img {
-  width: 16px;
-  height: 16px;
-  filter: brightness(0) saturate(100%) invert(17%) sepia(75%) saturate(2000%) hue-rotate(85deg) brightness(94%) contrast(101%);
-}
-
-/* Footer Bottom */
-.footer-bottom {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.footer-legal {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.footer-legal a {
-  color: #e0e0e0;
-  text-decoration: none;
-  font-size: 0.875rem;
-  transition: color 0.2s;
-}
-
-.footer-legal a:hover {
-  color: #ffffff;
-}
-
-.social-media {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.social-media a {
-  display: inline-block;
-  padding: 0.5rem;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 0.5rem;
-  transition: all 0.2s;
-}
-
-.social-media a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
-}
-
-.social-media img {
-  width: 20px;
-  height: 20px;
-  filter: brightness(0) invert(1);
-}
-
-.footer-copyright {
-  text-align: center;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.875rem;
-}
-
-/* ==========================================================================
-   Tablet Styles (600px and up)
-   ========================================================================== */
-
-@media (min-width: 600px) {
-  /* Header adjustments */
-  .navbar {
-    padding: 1rem 2rem;
-  }
-  
-  /* Hero section */
-  .hero {
-    padding: 4rem 2rem;
-  }
-  
-  .hero-title {
-    font-size: 3rem;
-  }
-  
-  .hero-description {
-    font-size: 1.25rem;
-  }
-  
-  /* Team section */
-  .team-section {
-    padding: 4rem 2rem;
-  }
-  
-  /* Team grid - 2 columns on tablet */
-  .team-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
-  
-  /* Member cards */
-  .member-image {
-    width: 100px;
-    height: 100px;
-  }
-  
-  .member-name {
-    font-size: 1.375rem;
-  }
-  
-  /* Footer sections */
-  .footer-sections {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
-  }
-  
-  .footer-bottom {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .footer-legal {
-    flex-direction: row;
-    gap: 2rem;
-  }
-  
-  .social-media {
-    justify-content: flex-end;
-  }
-}
-
-/* ==========================================================================
-   Desktop Styles (1024px and up)
-   ========================================================================== */
-
-@media (min-width: 1024px) {
-  /* Show desktop navigation */
-  .desktop-nav {
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+.ourteam{
+    width: 80rem;
+    overflow: hidden;
+     font-family: 'DM Sans', sans-serif;
+}
+nav .logo{
+    position: relative;
+    left: 4rem;
+    bottom: 15px;
+}
+nav .logo p{
+   position: absolute;
+   bottom: 15px;
+   left: 4rem;
+   font-size: 18px;
+}
+nav{
+    padding-top: 30px;
     display: flex;
-    gap: 0.5rem;
-  }
-  
-  /* Show desktop-only elements */
-  .desktop-only {
-    display: block;
-  }
-  
-  .user-profile {
-    margin-left: 1rem;
-  }
-  
-  .profile-img {
+    gap: 5rem;
+}
+nav .more ul{
+    list-style: none;
+    height: 3rem;
+     padding: 10px;
+     margin-left: 17rem;
+     font-size: 18px;
+}
+nav .more ul li{
+    float: left;
+    margin-inline: 2rem;
+}
+nav ul li a {
+    text-decoration: none;
+     color: #00c503;
+     padding: 15px;
+}
+nav .more ul li:hover a{
+     background-color: #005f00;
+    color: white;
+    border-radius: 10px;
+}
+nav .icon{
+    position: relative;
+    bottom: 20px;
+    left: 10rem;
+}
+nav .icon .notification{
+    position: absolute;
+    top: 20px;
+    left: -60px;
     width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 2px solid #e5e7eb;
-  }
-  
-  /* Hide mobile menu button on desktop */
-  .mobile-menu-btn {
+}
+nav .anime{
+    position: absolute;
+    top: 0px;
+}
+nav .icon .menui{
     display: none;
-  }
-  
-  /* Hero section */
-  .hero {
-    padding: 5rem 2rem;
-  }
-  
-  .hero-title {
-    font-size: 3.5rem;
-  }
-  
-  .hero-description {
-    font-size: 1.375rem;
-  }
-  
-  /* Team grid - 3 columns on desktop */
-  .team-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
-  }
-  
-  /* Enhanced hover effects on desktop */
-  .team-member:hover {
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-    transform: translateY(-4px);
-  }
-  
-  /* Member cards */
-  .member-image {
-    width: 120px;
-    height: 120px;
-  }
-  
-  .member-name {
-    font-size: 1.5rem;
-  }
-  
-  .member-role {
-    font-size: 1.125rem;
-  }
-  
-  /* Footer sections - 4 columns on desktop */
-  .footer-sections {
-    grid-template-columns: 1fr 1fr 1fr 1.5fr;
-    gap: 3rem;
-    align-items: start;
-  }
-  
-  /* Newsletter section adjustments for desktop */
-  .newsletter-section {
-    grid-column: 4;
-  }
-  
-  .newsletter-input {
-    max-width: 100%;
-    margin-top: 0.5rem;
-  }
-  
-  /* Better desktop footer brand positioning */
-  .footer-content {
-    padding: 4rem 2rem 2rem;
-  }
-  
-  .footer-brand {
+}
+nav .icon .expand{
+    position: absolute;
+    top: 20px;
+    left: 5rem;
+    width: 100px;
+}
+nav .expand .dropdowni{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    top: 5rem;
+    background-color: #fff;
+    position: absolute;
+    width: 10rem;
+    right: 4rem;
+    display: none;
+}
+nav .expand a{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: right;
+    text-decoration: none;
+    color:  #00c503;
+    font-size: 20px;
+}
+nav .expand:hover .dropdowni{
+    display: block;
+}
+nav .expand a:hover{
+  color: #fff;
+  background-color: #00c503;
+}
+nav .notification .dropdown{
+  position: absolute;
+  width: 30rem;
+  left: -5rem;
+  top: 5rem;
+  padding: 10px;
+   background-color: #fff;
+  border: 2px solid rgb(224, 219, 219);
+  display: none;
+  height: 36rem;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+nav .defaultchild{
+    position: relative;
+    width: 100%;
+  	border-radius: 0px 10px 10px 10px;
+  	background-color: #fff;
+  	border-bottom: 2px solid #00ab00;
+    padding: 10px;
+}
+nav .defaultchild .miss{
+    position: absolute;
+    bottom: 3.5rem;
+    left: 4rem;
+}
+nav .defaultchild p span {
+    margin-left: 2rem;
+}
+nav .defaultchild span{
+   color: #999;
+   margin-left: 3rem;
+   margin-bottom: 50px;
+}
+nav .fake{
+    font-size: 12px;
+    position: absolute;
+    left: 4rem;
+    bottom: 2.5rem;
+}
+nav .defaultchild:hover{
+    background-color: #dbeedb;
+}
+nav .notification:hover .dropdown{
+    display: block;
+}
+nav .menuicon .options{
+        min-width: 13rem;
+        position: absolute;
+        left: -10rem;
+        top: 5rem;
+        display: none;
+    }
+    nav .menuicon .menu{
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        padding: 20px 10px;
+        border: 2px solid rgb(223, 219, 219);
+        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+section{
+    background-color: #005f00;
+    height: 25rem;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 35px;
+}
+section h3{
+    margin-block: 7rem;;
+    margin-left: 2rem;
+}
+section p{
+    width: 51%;
+    text-align: center;
     margin-bottom: 3rem;
-  }
-  
-  .footer-logo {
-    font-size: 1.75rem;
-  }
-  
-  .footer-logo img {
-    width: 48px;
-    height: 48px;
-  }
+    margin-left: 3rem;
 }
-
-/* ==========================================================================
-   Large Desktop Styles (1280px and up)
-   ========================================================================== */
-
-@media (min-width: 1280px) {
-  /* Team grid - 4 columns on large screens */
-  .team-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  
-  /* Hero section */
-  .hero-title {
-    font-size: 4rem;
-  }
-  
-  .hero-description {
-    font-size: 1.5rem;
-  }
+.frameparent{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 4rem;
+   margin-block: 5rem;
+   padding-block: 30px;
+   padding-left: 3rem;
 }
-
-/* ==========================================================================
-   Focus Styles for Accessibility
-   ========================================================================== */
-
-/* Focus styles for interactive elements */
-.profile-toggle:focus + .profile-btn,
-.notification-toggle:focus + .notification-btn,
-.mobile-menu-toggle:focus + .mobile-menu-btn,
-.member-toggle:focus + .member-card {
-  outline: 2px solid #059669;
-  outline-offset: 2px;
+.frame{
+    border-radius: 25px;
+  	background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 10px 10px 40px;
+    display: flex;
 }
-
-/* Focus styles for links and buttons */
-a:focus,
-button:focus,
-input:focus {
-  outline: 2px solid #059669;
-  outline-offset: 2px;
+.frame .name{
+    text-align: center;
+    margin-block: 20px;
 }
-
-/* Ensure focus is visible */
-.nav-item:focus,
-.dropdown-item:focus,
-.mobile-nav-item:focus,
-.social-link:focus,
-.footer-section a:focus {
-  outline: 2px solid #059669;
-  outline-offset: 2px;
+.frame .role{
+   text-align: center;
 }
-
-/* ==========================================================================
-   Print Styles
-   ========================================================================== */
-
-@media print {
-  .header,
-  .footer {
+.frame .content {
+ display: none;
+ width: 485px;
+}
+.frame .content h3{
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+.frame .content .pro{
+    margin-bottom: 30px;
+    font-size: 25px;
+}
+.frame .content .project-manager{
+    font-size: 25px;
+    width: 372px;
+    margin-bottom: 2rem;
+}
+.frame:hover .content{
+   display: block;
+}
+.frame:hover .name, 
+.frame:hover .role{
     display: none;
-  }
-  
-  .team-member {
-    break-inside: avoid;
-    box-shadow: none;
-    border: 1px solid #ccc;
-  }
-  
-  .member-details {
-    max-height: none !important;
-    opacity: 1 !important;
-    padding: 1rem !important;
-  }
-  
-  .expand-indicator {
-    display: none;
-  }
 }
-
-/* ==========================================================================
-   Animation and Performance Optimizations
-   ========================================================================== */
-
-/* Reduce motion for users who prefer it */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+.frame:hover .framei img{
+    position: relative;
+    right: 30px;
+    bottom: 10px;
 }
-
-/* GPU acceleration for smooth animations */
-.team-member,
-.member-details,
-.mobile-menu,
-.profile-dropdown,
-.notification-dropdown {
-  will-change: transform;
-  transform: translateZ(0);
+.frame .handle{
+    display: flex;
+    gap: 4rem;
+    font-size: 25px;
+}
+footer{
+    background-color: #005f00;
+    height: 42rem;
+    color: #fff;
+}
+footer .medlogo{
+   position: relative;
+   top: 3rem;
+   left: 4rem;
+   border-bottom: 1px solid rgb(126, 124, 124);
+   padding-bottom: 3rem;
+   width: 90%;
+   margin-bottom: 5rem;
+}
+footer .medlogo h3{
+    position: absolute;
+    top: 2px;
+    left: 4rem;
+    font-size: 35px;
+}
+footer .explore{
+    display: flex;
+    gap: 7rem;
+    width: 85%;
+    margin: auto;
+}
+footer .subscribe{
+     width: 12rem;
+     font-size: 20px;
+     margin-bottom: 3rem;
+}
+footer .mail{
+    width: 370px;
+    border-bottom: 2px solid rgb(95, 89, 89);
+    font-size: 20px;
+}
+footer .mail input{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #fff;
+}
+ footer .service, .more, .help{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 20px;;
+}
+footer button{
+    border: none;
+    background-color: #a4fca4;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+footer button img{
+    background-color: transparent;
+    height: 100%;
+}
+footer a{
+   width: 150px;
+   color: #fff;
+   text-decoration: none;
+}
+footer .differ{
+    color: #85e485;
+}
+footer .terms{
+    display: flex;
+    gap: 32rem;
+    padding: 3rem;
+    width: 90%;
+    margin: auto;
+    font-size: 20px;
+}
+footer .terms .privacy{
+    margin-left: 3rem;
+}
+footer .terms .social a{
+    margin-right: 40px;
+}
+footer .rights{
+   margin-top: 50px;
+   text-align: center;
+   font-size: 25px;
+}
+@media (max-width: 500px) {
+    .ourteam{
+        width: 27rem;
+        overflow: hidden;
+    }
+    
+    nav .icon{
+        left: 15rem;
+    }
+    nav .logo{
+        left: 20px;
+    }
+    nav .anime, nav .expand{
+        display:  none;
+    }
+    nav .more{
+        display: none;
+    }
+    nav .menuicon{
+        display: block;
+        position: absolute;
+        top: 20px;
+        left: -15px;
+    }
+    nav .icon .menui{
+        display: block;
+        width: 40px;
+        height: 30px;
+    }
+    nav .menuicon a{
+        text-decoration: none;
+        color:  #00c503;
+        padding: 10px;
+        display: block;
+    }
+    nav .menuicon a:hover{
+        color: #fff;
+        background-color:  #00c503;
+    }
+    nav .menuicon:hover .options{
+        display: block;
+    }
+    nav .notification .dropdown{
+        left: -15rem;
+        width: 20rem;
+        top: 2rem;
+    }
+    section{
+        font-size: 27px;
+        height: 22rem;
+    }
+    section h3{
+        margin-block: 2rem;
+    }
+    section p{
+        width: 450px;
+        text-align: center;
+        margin-right: 2rem;
+    }
+    .frameparent{
+        display: flex;
+        flex-direction: column;
+        margin-block: 10px;
+        padding-block: 10px;
+    }
+    .frameparent .name, .role{
+        display: none;
+    }
+    .frameparent .frame{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: none;
+        margin-right: 5rem;
+    }
+    .frameparent .content{
+        display: block;
+        max-width: 29rem;
+        text-align: center;
+    }
+    .frameparent .framei img{
+    	width: 200px;
+	    height: 150px;
+        object-fit: contain;
+    }
+    .frameparent .content .pro{
+      font-size: 18px;
+      margin-bottom: -15px;
+    }
+    .frame .content .project-manager{
+        font-size: 18px;
+        width: 97%;
+        margin: auto;
+        padding: 20px;
+    }
+    .frame .handle{
+        gap: 2rem;
+        width: 85%;
+        margin-left: 2.7rem;
+        font-size: 18px;
+    }
+    .frame .handle .info{
+       margin-left: 7rem;
+    }
+    .frame .handle .infoi{
+      margin-left: 4rem;
+    }
+    .frame .handle .infoii{
+        margin-left: 5rem;
+    }
+    .frame:hover .framei img{
+        top: 0;
+        right: 0;
+    }
+    footer{
+     height: 73rem;
+    }
+    footer .medlogo{
+        left: 1rem;
+    }
+    footer .medlogo h3{
+        font-size: 30px;
+    }
+    footer .explore{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem
+    }
+    footer .service{
+        order: 1;
+    }
+    footer .more{
+    order: 2;
+    } 
+    footer .form{
+     order: 3;
+    } 
+    footer .help{
+     order: 4;
+    } 
+    footer .terms{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 20px;
+        width: 100%;
+    }
+    footer .social{
+        order: 1;
+    }
+    footer .condition{
+        order: 2;
+    }
 }
