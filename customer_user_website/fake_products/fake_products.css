@@ -42,9 +42,7 @@ body {
 ======================================== */
 .header {
   background: #fff;
-  border-bottom: 1px solid #f0f0f0;
-  position: sticky;
-  top: 0;
+
   z-index: 100;
 }
 
@@ -649,9 +647,9 @@ body {
   text-align: center;
 }
 
-.load-more-checkbox {
+/* .load-more-checkbox {
   display: none;
-}
+} */
 
 .load-more-btn,
 .load-less-btn {
@@ -675,14 +673,14 @@ body {
   box-shadow: 0 4px 12px rgba(0, 146, 0, 0.3);
 }
 
-.load-less-btn {
+/* .load-less-btn {
   display: none;
-}
+} */
 
 /* Hide additional products initially */
-#additional-products {
+/* #additional-products {
   display: none;
-}
+} */
 
 /* Show additional products when checkbox is checked */
 .products-container:has(#load-more-toggle:checked) #additional-products {

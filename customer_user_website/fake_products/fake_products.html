@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>All Products - MedCheck</title>
-	
+
 	<link rel="stylesheet" href="./fake_products.css" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro:wght@600&display=swap" />
@@ -15,10 +15,10 @@
 		<header class="header">
 			<nav class="navbar">
 				<a href="#" class="logo-link" id="logoLink">
-					<img class="logo-icon" src="logo.svg" alt="MedCheck Logo">
+					<img class="logo-icon" src="../assets/images/logo.svg" alt="MedCheck Logo">
 					<span class="brand-name">Medcheck</span>
 				</a>
-				
+
 				<div class="nav-menu">
 					<a href="#" class="nav-link active">Home</a>
 					<div class="nav-dropdown">
@@ -28,22 +28,23 @@
 						<span class="nav-link">More</span>
 					</div>
 				</div>
-				
+
 				<div class="header-actions">
 					<!-- Notifications -->
 					<div class="notification-container">
 						<input type="checkbox" id="notifications-toggle" class="popup-toggle" hidden>
 						<label for="notifications-toggle" class="notification-trigger" aria-label="View notifications">
-							<img src="Frame 161.svg" alt="Notifications">
+							<img src="../assets/images/Frame 161.svg" alt="Notifications">
 						</label>
-						
+
 						<div class="notification-popup">
 							<div class="notification-header">
 								<h3>Notifications</h3>
 							</div>
 							<div class="notification-list">
 								<article class="notification-item">
-									<img src="Ellipse 8.svg" alt="User avatar" class="notification-avatar">
+									<img src="../assets/images/Ellipse 8.svg" alt="User avatar"
+										class="notification-avatar">
 									<div class="notification-content">
 										<div class="notification-title">
 											<strong>Miss Jennifer</strong>
@@ -54,7 +55,8 @@
 									</div>
 								</article>
 								<article class="notification-item">
-									<img src="Ellipse 8.svg" alt="User avatar" class="notification-avatar">
+									<img src="../assets/images/Ellipse 8.svg" alt="User avatar"
+										class="notification-avatar">
 									<div class="notification-content">
 										<div class="notification-title">
 											<strong>Miss Jennifer</strong>
@@ -67,17 +69,17 @@
 							</div>
 						</div>
 					</div>
-					
+
 					<!-- Profile Picture -->
-					<img src="imoleayo_user.jpg" alt="Profile" class="profile-pic">
-					
+					<img src="../assets/images/imoleayo_user.jpg" alt="Profile" class="profile-pic">
+
 					<!-- Profile Menu -->
 					<div class="profile-menu-container">
 						<input type="checkbox" id="profile-menu-toggle" class="popup-toggle" hidden>
 						<label for="profile-menu-toggle" class="profile-menu-trigger" aria-label="Profile menu">
-							<img src="Frame 162.svg" alt="Menu">
+							<img src="../assets/images/Frame 162.svg" alt="Menu">
 						</label>
-						
+
 						<nav class="profile-menu-popup">
 							<a href="#" class="menu-item">Profile</a>
 							<a href="#" class="menu-item">History</a>
@@ -89,9 +91,9 @@
 					<div class="mobile-menu-container">
 						<input type="checkbox" id="mobile-menu-toggle" class="popup-toggle" hidden>
 						<label for="mobile-menu-toggle" class="mobile-menu-trigger" aria-label="Mobile menu">
-							<img src="menu-line.svg" alt="Menu">
+							<img src="../assets/images/menu-line.svg" alt="Menu">
 						</label>
-						
+
 						<nav class="mobile-menu-popup">
 							<a href="#" class="mobile-menu-item">Verify Product</a>
 							<a href="#" class="mobile-menu-item">Report Product</a>
@@ -109,7 +111,7 @@
 				</div>
 			</nav>
 		</header>
-		
+
 		<!-- Main Content -->
 		<main class="main-content">
 			<!-- Statistics Dashboard -->
@@ -127,7 +129,7 @@
 							</div>
 						</div>
 					</article>
-					
+
 					<article class="stat-card">
 						<div class="stat-content">
 							<h3 class="stat-title">
@@ -139,9 +141,9 @@
 								<span class="stat-change positive">+2% this month</span>
 							</div>
 						</div>
-						<img class="stat-icon" src="Vector.svg" alt="Statistics">
+						<img class="stat-icon" src="../assets/images/Vector.svg" alt="Statistics">
 					</article>
-					
+
 					<article class="stat-card">
 						<div class="stat-content">
 							<h3 class="stat-title">
@@ -153,9 +155,9 @@
 								<span class="stat-change positive">+12% from last month</span>
 							</div>
 						</div>
-						<img class="stat-icon" src="Vector.svg" alt="Statistics">
+						<img class="stat-icon" src="../assets/images/Vector.svg" alt="Statistics">
 					</article>
-					
+
 					<article class="stat-card">
 						<div class="stat-content">
 							<h3 class="stat-title">
@@ -167,7 +169,7 @@
 								<span class="stat-change neutral">+0% from last month</span>
 							</div>
 						</div>
-						<img class="stat-icon" src="Vector.svg" alt="Statistics">
+						<img class="stat-icon" src="../assets/images/Vector.svg" alt="Statistics">
 					</article>
 				</div>
 			</section>
@@ -179,7 +181,7 @@
 						<input type="text" placeholder="Search products..." aria-label="Search products">
 					</div>
 					<button class="filter-btn" aria-label="Filter products">
-						<img src="Vector.svg" alt="Filter">
+						<img src="../assets/images/Vector.svg" alt="Filter">
 					</button>
 					<div class="category-dropdown">
 						<button class="category-btn">
@@ -194,12 +196,12 @@
 				<header class="section-header">
 					<h1>All Products</h1>
 				</header>
-				
+
 				<div class="products-container">
 					<!-- Initial Batch of Products (Always Visible) -->
 					<div class="products-grid" id="initial-products">
 						<article class="product-card">
-							<img class="product-image" src="Rectangle 13.png" alt="Luminosa Beauty">
+							<img class="product-image" src="../assets/images/Rectangle 13.png" alt="Luminosa Beauty">
 							<div class="product-info">
 								<h3 class="product-name">Luminosa Beauty</h3>
 								<div class="product-badge flagged">
@@ -209,9 +211,9 @@
 								<time class="product-date">23/07/2025</time>
 							</div>
 						</article>
-						
+
 						<article class="product-card">
-							<img class="product-image" src="Rectangle 13-1.png" alt="Faux Glow">
+							<img class="product-image" src="../assets/images/Rectangle 13-1.png" alt="Faux Glow">
 							<div class="product-info">
 								<h3 class="product-name">Faux Glow</h3>
 								<div class="product-badge fake">
@@ -221,9 +223,9 @@
 								<time class="product-date">23/07/2025</time>
 							</div>
 						</article>
-						
+
 						<article class="product-card">
-							<img class="product-image" src="Rectangle 13-2.png" alt="Lamer">
+							<img class="product-image" src="../assets/images/Rectangle 13-2.png" alt="Lamer">
 							<div class="product-info">
 								<h3 class="product-name">Lamer</h3>
 								<div class="product-badge fake">
@@ -233,9 +235,9 @@
 								<time class="product-date">23/07/2025</time>
 							</div>
 						</article>
-						
+
 						<article class="product-card">
-							<img class="product-image" src="Rectangle 14.png" alt="Anosan Aqua">
+							<img class="product-image" src="../assets/images/Rectangle 14.png" alt="Anosan Aqua">
 							<div class="product-info">
 								<h3 class="product-name">Anosan Aqua</h3>
 								<div class="product-badge verified">
@@ -245,9 +247,9 @@
 								<time class="product-date">23/07/2025</time>
 							</div>
 						</article>
-						
+
 						<article class="product-card">
-							<img class="product-image" src="Rectangle 14-1.png" alt="3-Xon Cream">
+							<img class="product-image" src="../assets/images/Rectangle 14-1.png" alt="3-Xon Cream">
 							<div class="product-info">
 								<h3 class="product-name">3-Xon Cream</h3>
 								<div class="product-badge verified">
@@ -257,9 +259,9 @@
 								<time class="product-date">2024-09-25</time>
 							</div>
 						</article>
-						
+
 						<article class="product-card">
-							<img class="product-image" src="Rectangle 14-2.png" alt="10% Dextrose">
+							<img class="product-image" src="../assets/images/Rectangle 14-2.png" alt="10% Dextrose">
 							<div class="product-info">
 								<h3 class="product-name">10% Dextrose</h3>
 								<div class="product-badge verified">
@@ -272,16 +274,16 @@
 					</div>
 
 					<!-- Load More Toggle -->
-					<div class="load-more-container">
-						<input type="checkbox" id="load-more-toggle" class="load-more-checkbox" hidden>
+					<!-- <div class="load-more-container">
+						<input type="checkbox" id="load-more-toggle" class="load-more-checkbox">
 						<label for="load-more-toggle" class="load-more-btn">Load More Products</label>
 						<label for="load-more-toggle" class="load-less-btn">Show Less</label>
-					</div>
+					</div> -->
 
 					<!-- Additional Products (Hidden Initially) -->
 					<div class="products-grid" id="additional-products">
 						<article class="product-card">
-							<img class="product-image" src="Rectangle 14-3.png" alt="Amoxivue">
+							<img class="product-image" src="../assets/images/Rectangle 14-3.png" alt="Amoxivue">
 							<div class="product-info">
 								<h3 class="product-name">Amoxivue</h3>
 								<div class="product-badge recalled">
@@ -291,9 +293,9 @@
 								<time class="product-date">23/07/2025</time>
 							</div>
 						</article>
-						
+
 						<article class="product-card">
-							<img class="product-image" src="Rectangle 14-4.png" alt="Juhel Folic Acid">
+							<img class="product-image" src="../assets/images/Rectangle 14-4.png" alt="Juhel Folic Acid">
 							<div class="product-info">
 								<h3 class="product-name">Juhel Folic Acid</h3>
 								<div class="product-badge recalled">
@@ -303,9 +305,9 @@
 								<time class="product-date">23/07/2025</time>
 							</div>
 						</article>
-						
+
 						<article class="product-card">
-							<img class="product-image" src="Rectangle 14-5.png" alt="Zydus Pharmaceu">
+							<img class="product-image" src="../assets/images/Rectangle 14-5.png" alt="Zydus Pharmaceu">
 							<div class="product-info">
 								<h3 class="product-name">Zydus Pharmaceu</h3>
 								<div class="product-badge recalled">
@@ -315,9 +317,9 @@
 								<time class="product-date">23/07/2025</time>
 							</div>
 						</article>
-						
+
 						<article class="product-card">
-							<img class="product-image" src="Rectangle 14-6.png" alt="Herceptin">
+							<img class="product-image" src="../assets/images/Rectangle 14-6.png" alt="Herceptin">
 							<div class="product-info">
 								<h3 class="product-name">Herceptin</h3>
 								<div class="product-badge counterfeit">
@@ -327,9 +329,9 @@
 								<time class="product-date">23/07/2025</time>
 							</div>
 						</article>
-						
+
 						<article class="product-card">
-							<img class="product-image" src="Rectangle 14-7.png" alt="COMBIART">
+							<img class="product-image" src="../assets/images/Rectangle 14-7.png" alt="COMBIART">
 							<div class="product-info">
 								<h3 class="product-name">COMBIART</h3>
 								<div class="product-badge counterfeit">
@@ -339,9 +341,9 @@
 								<time class="product-date">23/07/2025</time>
 							</div>
 						</article>
-						
+
 						<article class="product-card">
-							<img class="product-image" src="Rectangle 14-8.png" alt="Phesgo">
+							<img class="product-image" src="../assets/images/Rectangle 14-8.png" alt="Phesgo">
 							<div class="product-info">
 								<h3 class="product-name">Phesgo</h3>
 								<div class="product-badge counterfeit">
@@ -351,6 +353,217 @@
 								<time class="product-date">23/07/2025</time>
 							</div>
 						</article>
+
+
+						<!--ADDED MORE PRODUCTS, THANK YOU -->
+						<article class="product-card">
+							<img class="product-image" src="../assets/images/Rectangle 14-5.png" alt="Zydus Pharmaceu">
+							<div class="product-info">
+								<h3 class="product-name">Zydus Pharmaceu</h3>
+								<div class="product-badge recalled">
+									<span>🧪 Recalled</span>
+								</div>
+								<p class="product-category">Drugs</p>
+								<time class="product-date">23/07/2025</time>
+							</div>
+						</article>
+
+
+						<article class="product-card">
+							<img class="product-image" src="../assets/images/Rectangle 14-6.png" alt="Herceptin">
+							<div class="product-info">
+								<h3 class="product-name">Herceptin</h3>
+								<div class="product-badge counterfeit">
+									<span>⚠️ Counterfeit</span>
+								</div>
+								<p class="product-category">Drugs</p>
+								<time class="product-date">23/07/2025</time>
+							</div>
+						</article>
+
+
+						</article>
+
+						<article class="product-card">
+							<img class="product-image" src="../assets/images/Rectangle 14-2.png" alt="10% Dextrose">
+							<div class="product-info">
+								<h3 class="product-name">10% Dextrose</h3>
+								<div class="product-badge verified">
+									<span>✅ Verified</span>
+								</div>
+								<p class="product-category">Drugs</p>
+								<time class="product-date">2021-08-03</time>
+							</div>
+						</article>
+						</article>
+
+						<article class="product-card">
+							<img class="product-image" src="../assets/images/Rectangle 14-2.png" alt="10% Dextrose">
+							<div class="product-info">
+								<h3 class="product-name">10% Dextrose</h3>
+								<div class="product-badge verified">
+									<span>✅ Verified</span>
+								</div>
+								<p class="product-category">Drugs</p>
+								<time class="product-date">2021-08-03</time>
+							</div>
+						</article>
+						</article>
+
+						<article class="product-card">
+							<img class="product-image" src="../assets/images/Rectangle 14-2.png" alt="10% Dextrose">
+							<div class="product-info">
+								<h3 class="product-name">10% Dextrose</h3>
+								<div class="product-badge verified">
+									<span>✅ Verified</span>
+								</div>
+								<p class="product-category">Drugs</p>
+								<time class="product-date">2021-08-03</time>
+							</div>
+						</article>
+						</article>
+
+						<article class="product-card">
+							<img class="product-image" src="../assets/images/Rectangle 14-2.png" alt="10% Dextrose">
+							<div class="product-info">
+								<h3 class="product-name">10% Dextrose</h3>
+								<div class="product-badge verified">
+									<span>✅ Verified</span>
+								</div>
+								<p class="product-category">Drugs</p>
+								<time class="product-date">2021-08-03</time>
+							</div>
+						</article>
+						</article>
+
+						<article class="product-card">
+							<img class="product-image" src="../assets/images/Rectangle 14-2.png" alt="10% Dextrose">
+							<div class="product-info">
+								<h3 class="product-name">10% Dextrose</h3>
+								<div class="product-badge verified">
+									<span>✅ Verified</span>
+								</div>
+								<p class="product-category">Drugs</p>
+								<time class="product-date">2021-08-03</time>
+							</div>
+						</article>
+						</article>
+
+						<article class="product-card">
+							<img class="product-image" src="../assets/images/Rectangle 14-2.png" alt="10% Dextrose">
+							<div class="product-info">
+								<h3 class="product-name">10% Dextrose</h3>
+								<div class="product-badge verified">
+									<span>✅ Verified</span>
+								</div>
+								<p class="product-category">Drugs</p>
+								<time class="product-date">2021-08-03</time>
+							</div>
+						</article>
+						</article>
+
+						<article class="product-card">
+							<img class="product-image" src="../assets/images/Rectangle 14-6.png" alt="Herceptin">
+							<div class="product-info">
+								<h3 class="product-name">Herceptin</h3>
+								<div class="product-badge counterfeit">
+									<span>⚠️ Counterfeit</span>
+								</div>
+								<p class="product-category">Drugs</p>
+								<time class="product-date">23/07/2025</time>
+							</div>
+						</article>
+						<article class="product-card">
+							<img class="product-image" src="../assets/images/Rectangle 14-2.png" alt="10% Dextrose">
+							<div class="product-info">
+								<h3 class="product-name">10% Dextrose</h3>
+								<div class="product-badge verified">
+									<span>✅ Verified</span>
+								</div>
+								<p class="product-category">Drugs</p>
+								<time class="product-date">2021-08-03</time>
+							</div>
+						</article>
+						</article>
+
+						<article class="product-card">
+							<img class="product-image" src="../assets/images/Rectangle 14-2.png" alt="10% Dextrose">
+							<div class="product-info">
+								<h3 class="product-name">10% Dextrose</h3>
+								<div class="product-badge verified">
+									<span>✅ Verified</span>
+								</div>
+								<p class="product-category">Drugs</p>
+								<time class="product-date">2021-08-03</time>
+							</div>
+						</article>
+						</article>
+
+						<article class="product-card">
+							<img class="product-image" src="../assets/images/Rectangle 14-2.png" alt="10% Dextrose">
+							<div class="product-info">
+								<h3 class="product-name">10% Dextrose</h3>
+								<div class="product-badge verified">
+									<span>✅ Verified</span>
+								</div>
+								<p class="product-category">Drugs</p>
+								<time class="product-date">2021-08-03</time>
+							</div>
+						</article>
+						</article>
+
+						<article class="product-card">
+							<img class="product-image" src="../assets/images/Rectangle 14-2.png" alt="10% Dextrose">
+							<div class="product-info">
+								<h3 class="product-name">10% Dextrose</h3>
+								<div class="product-badge verified">
+									<span>✅ Verified</span>
+								</div>
+								<p class="product-category">Drugs</p>
+								<time class="product-date">2021-08-03</time>
+							</div>
+						</article>
+						</article>
+
+						<article class="product-card">
+							<img class="product-image" src="../assets/images/Rectangle 14-2.png" alt="10% Dextrose">
+							<div class="product-info">
+								<h3 class="product-name">10% Dextrose</h3>
+								<div class="product-badge verified">
+									<span>✅ Verified</span>
+								</div>
+								<p class="product-category">Drugs</p>
+								<time class="product-date">2021-08-03</time>
+							</div>
+						</article>
+						</article>
+
+						<article class="product-card">
+							<img class="product-image" src="../assets/images/Rectangle 14-2.png" alt="10% Dextrose">
+							<div class="product-info">
+								<h3 class="product-name">10% Dextrose</h3>
+								<div class="product-badge verified">
+									<span>✅ Verified</span>
+								</div>
+								<p class="product-category">Drugs</p>
+								<time class="product-date">2021-08-03</time>
+							</div>
+						</article>
+						</article>
+
+						<article class="product-card">
+							<img class="product-image" src="../assets/images/Rectangle 14-2.png" alt="10% Dextrose">
+							<div class="product-info">
+								<h3 class="product-name">10% Dextrose</h3>
+								<div class="product-badge verified">
+									<span>✅ Verified</span>
+								</div>
+								<p class="product-category">Drugs</p>
+								<time class="product-date">2021-08-03</time>
+							</div>
+						</article>
+
+						<!-- IT ALL ENDS HERE, THANK  -->
 					</div>
 				</div>
 			</section>
@@ -361,11 +574,11 @@
 			<div class="footer-content">
 				<div class="footer-brand">
 					<a href="#" class="footer-logo">
-						<img src="logo.svg" alt="MedCheck Logo">
+						<img src="../assets/images/logo.svg" alt="MedCheck Logo">
 						<span>Medcheck</span>
 					</a>
 				</div>
-				
+
 				<div class="footer-sections">
 					<div class="footer-section">
 						<h3>Services</h3>
@@ -376,7 +589,7 @@
 							<a href="#">What we Do</a>
 						</nav>
 					</div>
-					
+
 					<div class="footer-section">
 						<h3>More</h3>
 						<nav>
@@ -386,41 +599,44 @@
 							<a href="#">Testimonies</a>
 						</nav>
 					</div>
-					
+
 					<div class="footer-section">
 						<h3>Help</h3>
 						<nav>
 							<a href="#">Contact Us</a>
 						</nav>
 					</div>
-					
+
 					<div class="footer-section newsletter-section">
 						<h3>Subscribe to our newsletter</h3>
 						<form class="newsletter-form" action="#" method="post">
 							<label for="newsletter-email" class="sr-only">Email address</label>
 							<div class="newsletter-input">
-								<input type="email" id="newsletter-email" name="email" placeholder="Email address" required>
+								<input type="email" id="newsletter-email" name="email" placeholder="Email address"
+									required>
 								<button type="submit" aria-label="Subscribe">
-									<img src="Submit.svg" alt="Submit">
+									<img src="../assets/images/Submit.svg" alt="Submit">
 								</button>
 							</div>
 						</form>
 					</div>
 				</div>
-				
+
 				<div class="footer-bottom">
 					<div class="footer-legal">
 						<a href="#">Terms & Conditions</a>
 						<a href="#">Privacy Policy</a>
 					</div>
-					
+
 					<div class="social-links">
-						<a href="#" aria-label="Facebook"><img src="001-facebook.svg" alt="Facebook"></a>
-						<a href="#" aria-label="Twitter"><img src="003-twitter.svg" alt="Twitter"></a>
-						<a href="#" aria-label="Instagram"><img src="004-instagram.png" alt="Instagram"></a>
+						<a href="#" aria-label="Facebook"><img src="../assets/images/001-facebook.svg"
+								alt="Facebook"></a>
+						<a href="#" aria-label="Twitter"><img src="../assets/images/003-twitter.svg" alt="Twitter"></a>
+						<a href="#" aria-label="Instagram"><img src="../assets/images/004-instagram.png"
+								alt="Instagram"></a>
 					</div>
 				</div>
-				
+
 				<p class="copyright">© 2025 MedCheck. All Rights Reserved.</p>
 			</div>
 		</footer>
